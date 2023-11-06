@@ -6,7 +6,7 @@ Objectif
 L'objectif est de créer un outil fiable et automatisé capable de prendre des décisions d'investissement éclairées en utilisant des algorithmes de prédiction avancés.
 Définition du projet
 	Le projet envisagé est un système intégré conçu pour optimiser les décisions d'investissement en capitalisant sur la puissance des données et de l'automatisation. Chaque composant, de l'entrepôt de données à l'algorithme de prédiction, joue un rôle crucial et est étroitement lié aux autres pour garantir une prise de décision fluide et éclairée. Ce système holistique permettra non seulement de prédire les mouvements du marché avec précision, mais aussi d'agir rapidement sur ces prédictions pour maximiser les rendements.
-![Texte alternatif](Img/Système de BDD.png)
+![Schéma du système](Img/Schéma_Système.png)
 
 Décomposition du système en composant et processus
 Entrepôt de données (Data Warehouse)
