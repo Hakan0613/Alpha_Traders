@@ -1,0 +1,62 @@
+{
+	"name": "Table_cotations",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Alpha_Traders_DB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Opening_Date_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Closing_Date_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Company_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Opening_Price",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Closing_Price",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Volume",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "High_Price",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Low_Price",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Dividend",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Quotations"
+		}
+	}
+}
