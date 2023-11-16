@@ -43,6 +43,12 @@
 										"supportRFC5988": "true"
 									}
 								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false,
+									"disableMetricsCollection": false
+								},
 								"enableStaging": false
 							},
 							"inputs": [
@@ -59,6 +65,12 @@
 											"type": "Expression"
 										}
 									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Table_cotations",
+									"type": "DatasetReference"
 								}
 							]
 						}
