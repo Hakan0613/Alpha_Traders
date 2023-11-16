@@ -1,5 +1,5 @@
 {
-	"name": "Excel1",
+	"name": "Liste_Entreprise_par_Indice",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CompanyListFile",
