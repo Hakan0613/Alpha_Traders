@@ -25,8 +25,9 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'excel',",
+				"     container: 'alphatradersstock',",
 				"     fileName: 'CompanyByStockIndex.xlsx',",
-				"     sheetName: '',",
+				"     sheetName: 'Feuil1',",
 				"     firstRowAsHeader: true) ~> ReadCompanyListByIndex"
 			]
 		}
