@@ -13,7 +13,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "@concat('data/CORE/HISTORICAL_PRICES/',dataset().Symbol)"
+			"relativeUrl": ""
 		},
 		"schema": []
 	}
