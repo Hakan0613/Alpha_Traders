@@ -12,12 +12,6 @@
 		},
 		"annotations": [],
 		"type": "RestResource",
-		"typeProperties": {
-			"relativeUrl": {
-				"value": "@concat('/data/CORE/HISTORICAL_PRICES/',dataset().Symbol)",
-				"type": "Expression"
-			}
-		},
 		"schema": []
 	}
 }
