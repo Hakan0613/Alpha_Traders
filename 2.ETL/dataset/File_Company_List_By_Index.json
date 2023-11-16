@@ -17,15 +17,19 @@
 		},
 		"schema": [
 			{
+				"name": "Company",
 				"type": "String"
 			},
 			{
+				"name": "Ticker",
 				"type": "String"
 			},
 			{
+				"name": "StockIndex",
 				"type": "String"
 			},
 			{
+				"name": "UpdateDate",
 				"type": "String"
 			}
 		]
