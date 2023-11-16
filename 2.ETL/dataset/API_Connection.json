@@ -14,7 +14,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('/',dataset().Symbol)",
+				"value": "@concat('/data/CORE/HISTORICAL_PRICES/',dataset().Symbol)",
 				"type": "Expression"
 			}
 		},
