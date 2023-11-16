@@ -19,6 +19,9 @@
 				}
 			],
 			"scriptLines": [
+				"parameters{",
+				"     IndexList as string[]",
+				"}",
 				"source(output(",
 				"          Company as string,",
 				"          Ticker as string,",
