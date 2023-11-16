@@ -33,7 +33,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "RestResource1",
+						"referenceName": "API_Connection",
 						"type": "DatasetReference"
 					}
 				],
