@@ -1,0 +1,35 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "AzureBlobStorage1",
+						"type": "LinkedServiceReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          Company as string,",
+				"          Ticker as string,",
+				"          StockIndex as string,",
+				"          UpdateDate as date",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'excel',",
+				"     container: 'alphatradersstock',",
+				"     fileName: 'CompanyByStockIndex.xlsx',",
+				"     sheetName: 'Feuil1',",
+				"     firstRowAsHeader: true) ~> source1"
+			]
+		}
+	}
+}
