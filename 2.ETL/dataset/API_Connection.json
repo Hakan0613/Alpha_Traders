@@ -5,8 +5,19 @@
 			"referenceName": "IEX Cloud",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Symbol": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('/',dataset().Symbol)",
+				"type": "Expression"
+			}
+		},
 		"schema": []
 	}
 }
