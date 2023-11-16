@@ -16,9 +16,6 @@
 			"transformations": [
 				{
 					"name": "select1"
-				},
-				{
-					"name": "FilterByIndex"
 				}
 			],
 			"scriptLines": [
@@ -36,12 +33,11 @@
 				"     fileName: 'CompanyByStockIndex.xlsx',",
 				"     sheetName: 'Feuil1',",
 				"     firstRowAsHeader: true) ~> ReadCompanyListByIndex",
-				"FilterByIndex select(mapColumn(",
+				"ReadCompanyListByIndex select(mapColumn(",
 				"          Ticker",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1",
-				"ReadCompanyListByIndex filter(ERROR_FUNCTION('')) ~> FilterByIndex"
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
