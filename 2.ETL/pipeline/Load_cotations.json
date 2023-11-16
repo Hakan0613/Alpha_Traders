@@ -85,6 +85,14 @@
 				}
 			}
 		],
+		"variables": {
+			"SelectIndex": {
+				"type": "Array",
+				"defaultValue": [
+					"CAC40"
+				]
+			}
+		},
 		"annotations": []
 	}
 }
