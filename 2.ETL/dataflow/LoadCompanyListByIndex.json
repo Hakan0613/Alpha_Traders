@@ -20,7 +20,7 @@
 			],
 			"scriptLines": [
 				"parameters{",
-				"     IndexList as string[]",
+				"     IndexList as string[] ($IndexList)",
 				"}",
 				"source(output(",
 				"          Company as string,",

@@ -76,7 +76,13 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "LoadCompanyListByIndex",
-						"type": "DataFlowReference"
+						"type": "DataFlowReference",
+						"parameters": {
+							"IndexList": {
+								"value": "@variables('SelectIndex')",
+								"type": "Expression"
+							}
+						}
 					},
 					"compute": {
 						"coreCount": 8,
@@ -90,7 +96,7 @@
 			"SelectIndex": {
 				"type": "Array",
 				"defaultValue": [
-					"CAC40"
+					"['CAC40']"
 				]
 			}
 		},
