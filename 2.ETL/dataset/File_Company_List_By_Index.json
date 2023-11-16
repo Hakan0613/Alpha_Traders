@@ -1,5 +1,5 @@
 {
-	"name": "Liste_Entreprise_par_Indice",
+	"name": "File_Company_List_By_Index",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CompanyListFile",
