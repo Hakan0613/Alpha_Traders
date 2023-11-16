@@ -13,7 +13,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "select1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          Company as string,",
@@ -22,13 +26,18 @@
 				"          UpdateDate as date",
 				"     ),",
 				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
+				"     validateSchema: true,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'excel',",
 				"     container: 'alphatradersstock',",
 				"     fileName: 'CompanyByStockIndex.xlsx',",
 				"     sheetName: 'Feuil1',",
-				"     firstRowAsHeader: true) ~> ReadCompanyListByIndex"
+				"     firstRowAsHeader: true) ~> ReadCompanyListByIndex",
+				"ReadCompanyListByIndex select(mapColumn(",
+				"          Ticker",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
