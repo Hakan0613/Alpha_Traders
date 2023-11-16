@@ -16,14 +16,17 @@
 			"transformations": [
 				{
 					"name": "select1"
+				},
+				{
+					"name": "FilterByIndex"
 				}
 			],
 			"scriptLines": [
 				"source(output(",
-				"          {_col0_} as string,",
-				"          {_col1_} as string,",
-				"          {_col2_} as string,",
-				"          {_col3_} as string",
+				"          Company as string,",
+				"          Ticker as string,",
+				"          StockIndex as string,",
+				"          UpdateDate as date",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: true,",
@@ -32,12 +35,13 @@
 				"     container: 'alphatradersstock',",
 				"     fileName: 'CompanyByStockIndex.xlsx',",
 				"     sheetName: 'Feuil1',",
-				"     firstRowAsHeader: false) ~> ReadCompanyListByIndex",
-				"ReadCompanyListByIndex select(mapColumn(",
+				"     firstRowAsHeader: true) ~> ReadCompanyListByIndex",
+				"FilterByIndex select(mapColumn(",
 				"          Ticker",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"ReadCompanyListByIndex filter(ERROR_FUNCTION('')) ~> FilterByIndex"
 			]
 		}
 	}
