@@ -1,20 +1,14 @@
 {
 	"name": "IEX Cloud",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"description": "Fournisseur de données financières",
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://api.iex.cloud/v1/",
+			"url": "https://api.iex.cloud/v1/data/CORE/HISTORICAL_PRICES/ADBE?token=sk_7603c9023ea54a58a17095afab699f7d",
 			"enableServerCertificateValidation": true,
-			"authenticationType": "Anonymous",
-			"authHeaders": {
-				"token": {
-					"type": "SecureString",
-					"value": "**********"
-				}
-			}
+			"authenticationType": "Anonymous"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
