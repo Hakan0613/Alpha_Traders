@@ -43,8 +43,27 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Select Ticker",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Ticker",
+					"value": ""
+				}
 			}
 		],
+		"variables": {
+			"Ticker": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
