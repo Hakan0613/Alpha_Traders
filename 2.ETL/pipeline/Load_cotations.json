@@ -61,7 +61,7 @@
 											"type": "Expression"
 										},
 										"token": {
-											"value": "pipeline().parameters.token",
+											"value": "@pipeline().parameters.token",
 											"type": "Expression"
 										}
 									}
