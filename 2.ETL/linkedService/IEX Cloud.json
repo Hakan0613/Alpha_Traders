@@ -5,7 +5,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://api.iex.cloud/v1/data/CORE/HISTORICAL_PRICES/ADBE?token=sk_7603c9023ea54a58a17095afab699f7d",
+			"url": "https://api.iex.cloud/v1/data/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
