@@ -53,6 +53,10 @@
 										"Symbol": {
 											"value": "@item()",
 											"type": "Expression"
+										},
+										"token": {
+											"value": "@pipeline().parameters.token",
+											"type": "Expression"
 										}
 									}
 								}
@@ -92,6 +96,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"token": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"SelectIndex": {
 				"type": "Array",
