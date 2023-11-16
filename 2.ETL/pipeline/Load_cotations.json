@@ -98,7 +98,11 @@
 		],
 		"parameters": {
 			"token": {
-				"type": "string"
+				"type": "securestring",
+				"defaultValue": {
+					"type": "SecureString",
+					"value": "**********"
+				}
 			}
 		},
 		"variables": {

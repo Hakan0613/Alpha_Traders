@@ -16,11 +16,14 @@
 			"transformations": [
 				{
 					"name": "select1"
+				},
+				{
+					"name": "FilterByIndex"
 				}
 			],
 			"scriptLines": [
 				"parameters{",
-				"     IndexList as string[] ($IndexList)",
+				"     IndexList as string[]",
 				"}",
 				"source(output(",
 				"          Company as string,",
@@ -36,11 +39,12 @@
 				"     fileName: 'CompanyByStockIndex.xlsx',",
 				"     sheetName: 'Feuil1',",
 				"     firstRowAsHeader: true) ~> ReadCompanyListByIndex",
-				"ReadCompanyListByIndex select(mapColumn(",
+				"FilterByIndex select(mapColumn(",
 				"          Ticker",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"ReadCompanyListByIndex filter(contains($IndexList, #item==StockIndex)) ~> FilterByIndex"
 			]
 		}
 	}
