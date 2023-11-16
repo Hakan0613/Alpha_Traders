@@ -1,15 +1,15 @@
 {
-	"name": "dataflow1",
+	"name": "LoadCompanyListByIndex",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [
 				{
 					"linkedService": {
-						"referenceName": "AzureBlobStorage1",
+						"referenceName": "Connexion_CompanyListByIndex",
 						"type": "LinkedServiceReference"
 					},
-					"name": "source1"
+					"name": "ReadCompanyListByIndex"
 				}
 			],
 			"sinks": [],
@@ -25,10 +25,9 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'excel',",
-				"     container: 'alphatradersstock',",
 				"     fileName: 'CompanyByStockIndex.xlsx',",
-				"     sheetName: 'Feuil1',",
-				"     firstRowAsHeader: true) ~> source1"
+				"     sheetName: '',",
+				"     firstRowAsHeader: true) ~> ReadCompanyListByIndex"
 			]
 		}
 	}
