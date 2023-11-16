@@ -10,8 +10,7 @@
 				"type": "string"
 			},
 			"token": {
-				"type": "string",
-				"defaultValue": "pk_6ba69ebc7b0b4b959a5e0936f82c5699"
+				"type": "string"
 			}
 		},
 		"annotations": [],
