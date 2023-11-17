@@ -1,5 +1,6 @@
 {
 	"name": "IEX Cloud",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"description": "Fournisseur de données financières",
 		"annotations": [],
@@ -7,8 +8,13 @@
 		"typeProperties": {
 			"url": "https://api.iex.cloud/v1/data/CORE/COMPANY",
 			"enableServerCertificateValidation": true,
-			"authenticationType": "Anonymous"
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"token": {
+					"type": "SecureString",
+					"value": "**********"
+				}
+			}
 		}
-	},
-	"type": "Microsoft.DataFactory/factories/linkedservices"
+	}
 }
