@@ -200,10 +200,6 @@
 									"referenceName": "API_Connection",
 									"type": "DatasetReference",
 									"parameters": {
-										"Symbol": {
-											"value": "@item()",
-											"type": "Expression"
-										},
 										"Token": "pk_6ba69ebc7b0b4b959a5e0936f82c5699"
 									}
 								}

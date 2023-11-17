@@ -15,15 +15,11 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(output(",
-				"          body as (address as string, address2 as string, ceo as string, city as string, companyName as string, country as string, date as date, employees as short, exchange as string, exchangeCode as string, id as string, industry as string, issuetype as string, key as string, longDescription as string, marketcap as string, phone as long, primarySicCode as short, sector as string, securityName as string, securityType as string, shortDescription as string, state as string, subkey as string, symbol as string, updated as double, website as string, zip as string),",
-				"          headers as [string,string]",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     httpMethod: 'GET',",
 				"     timeout: 30,",
-				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'arrayOfDocuments']) ~> source1"
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> source1"
 			]
 		}
 	}
