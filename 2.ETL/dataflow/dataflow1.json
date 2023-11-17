@@ -14,12 +14,16 @@
 			],
 			"sinks": [
 				{
-					"name": "sink1"
+					"dataset": {
+						"referenceName": "Company_Table",
+						"type": "DatasetReference"
+					},
+					"name": "LoadCompanyInfo"
 				}
 			],
 			"transformations": [
 				{
-					"name": "select1"
+					"name": "DataSelection"
 				}
 			],
 			"scriptLines": [
@@ -43,11 +47,28 @@
 				"          CreationDate = body.date",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 sink(allowSchemaDrift: true,",
+				"     skipDuplicateMapOutputs: true) ~> DataSelection",
+				"DataSelection sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          Company_ID as integer,",
+				"          Company_Name as string,",
+				"          Ticker as string,",
+				"          Sector as string,",
+				"          Sub_Sector as string,",
+				"          Description as string,",
+				"          Creation_Date_ID as integer,",
+				"          IPO_Date_ID as integer,",
+				"          Country_ID as integer",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> LoadCompanyInfo"
 			]
 		}
 	}
