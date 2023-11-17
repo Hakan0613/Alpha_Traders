@@ -55,47 +55,141 @@
 									"mappings": [
 										{
 											"source": {
-												"path": "$['fclose']"
-											},
-											"sink": {
-												"name": "Closing_Price",
-												"type": "Double"
+												"path": "$['address2']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['fhigh']"
-											},
-											"sink": {
-												"name": "High_Price",
-												"type": "Double"
+												"path": "$['ceo']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['flow']"
-											},
-											"sink": {
-												"name": "Low_Price",
-												"type": "Double"
+												"path": "$['city']"
 											}
 										},
 										{
 											"source": {
-												"path": "$['fopen']"
+												"path": "$['companyName']"
 											},
 											"sink": {
-												"name": "Opening_Price",
-												"type": "Double"
+												"name": "Company_Name",
+												"type": "String"
 											}
 										},
 										{
 											"source": {
-												"path": "$['fvolume']"
-											},
-											"sink": {
-												"name": "Volume",
-												"type": "Int32"
+												"path": "$['country']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['date']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['employees']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['exchange']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['exchangeCode']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['industry']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['issuetype']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['longDescription']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['marketcap']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['phone']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['primarySicCode']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['sector']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['securityName']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['securityType']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['shortDescription']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['state']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['symbol']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['website']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['zip']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['id']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['key']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['subkey']"
+											}
+										},
+										{
+											"source": {
+												"path": "$['updated']"
 											}
 										}
 									]
@@ -110,7 +204,7 @@
 											"value": "@item()",
 											"type": "Expression"
 										},
-										"token": {
+										"Token": {
 											"value": "@pipeline().parameters.token",
 											"type": "Expression"
 										}
@@ -125,7 +219,7 @@
 							]
 						},
 						{
-							"name": "Data flow1",
+							"name": "Load Company1",
 							"type": "ExecuteDataFlow",
 							"dependsOn": [],
 							"policy": {
@@ -139,7 +233,16 @@
 							"typeProperties": {
 								"dataflow": {
 									"referenceName": "dataflow1",
-									"type": "DataFlowReference"
+									"type": "DataFlowReference",
+									"datasetParameters": {
+										"source1": {
+											"Symbol": "@item()",
+											"Token": {
+												"value": "@pipeline().parameters.token",
+												"type": "Expression"
+											}
+										}
+									}
 								},
 								"compute": {
 									"coreCount": 8,
