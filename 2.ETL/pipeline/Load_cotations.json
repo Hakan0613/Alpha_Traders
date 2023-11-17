@@ -204,10 +204,7 @@
 											"value": "@item()",
 											"type": "Expression"
 										},
-										"Token": {
-											"value": "@pipeline().parameters.token",
-											"type": "Expression"
-										}
+										"Token": "pk_6ba69ebc7b0b4b959a5e0936f82c5699"
 									}
 								}
 							],
@@ -233,16 +230,7 @@
 							"typeProperties": {
 								"dataflow": {
 									"referenceName": "dataflow1",
-									"type": "DataFlowReference",
-									"datasetParameters": {
-										"source1": {
-											"Symbol": "@item()",
-											"Token": {
-												"value": "@pipeline().parameters.token",
-												"type": "Expression"
-											}
-										}
-									}
+									"type": "DataFlowReference"
 								},
 								"compute": {
 									"coreCount": 8,
