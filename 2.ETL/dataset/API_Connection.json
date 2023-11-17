@@ -5,10 +5,22 @@
 			"referenceName": "IEX Cloud",
 			"type": "LinkedServiceReference",
 			"parameters": {
+				"Symbol": {
+					"value": "@dataset().Symbol",
+					"type": "Expression"
+				},
 				"Token": {
-					"value": "@pipeline().parameters.Token",
+					"value": "@dataset().Token",
 					"type": "Expression"
 				}
+			}
+		},
+		"parameters": {
+			"Token": {
+				"type": "string"
+			},
+			"Symbol": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
