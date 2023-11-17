@@ -9,7 +9,7 @@
 			"Symbol": {
 				"type": "string"
 			},
-			"token": {
+			"Token": {
 				"type": "string"
 			}
 		},
@@ -17,7 +17,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('CORE/COMPANY/',dataset().Symbol,'?token=',dataset().token)",
+				"value": "@concat('CORE/COMPANY/',dataset().Symbol,'?token=',dataset().Token)",
 				"type": "Expression"
 			}
 		},
