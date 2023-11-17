@@ -6,9 +6,6 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"Symbol": {
-				"type": "string"
-			},
 			"Token": {
 				"type": "string"
 			}
@@ -17,7 +14,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('CORE/COMPANY/',dataset().Symbol,'?token=',dataset().Token)",
+				"value": "@concat('CORE/COMPANY/ADBE?token=',dataset().Token)",
 				"type": "Expression"
 			}
 		},
