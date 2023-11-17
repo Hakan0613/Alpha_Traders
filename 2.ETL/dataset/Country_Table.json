@@ -12,49 +12,13 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "Opening_Date_ID",
+				"name": "Country_ID",
 				"type": "int",
 				"precision": 10
 			},
 			{
-				"name": "Closing_Date_ID",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "Company_ID",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "Opening_Price",
-				"type": "float",
-				"precision": 15
-			},
-			{
-				"name": "Closing_Price",
-				"type": "float",
-				"precision": 15
-			},
-			{
-				"name": "Volume",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "High_Price",
-				"type": "float",
-				"precision": 15
-			},
-			{
-				"name": "Low_Price",
-				"type": "float",
-				"precision": 15
-			},
-			{
-				"name": "Dividend",
-				"type": "float",
-				"precision": 15
+				"name": "Country_Name",
+				"type": "varchar"
 			}
 		],
 		"typeProperties": {

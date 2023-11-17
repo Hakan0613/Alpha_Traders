@@ -12,12 +12,12 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "Opening_Date_ID",
+				"name": "Event_Type_ID",
 				"type": "int",
 				"precision": 10
 			},
 			{
-				"name": "Closing_Date_ID",
+				"name": "Country_ID",
 				"type": "int",
 				"precision": 10
 			},
@@ -27,34 +27,22 @@
 				"precision": 10
 			},
 			{
-				"name": "Opening_Price",
-				"type": "float",
-				"precision": 15
-			},
-			{
-				"name": "Closing_Price",
-				"type": "float",
-				"precision": 15
-			},
-			{
-				"name": "Volume",
+				"name": "Start_Date_ID",
 				"type": "int",
 				"precision": 10
 			},
 			{
-				"name": "High_Price",
-				"type": "float",
-				"precision": 15
+				"name": "End_Date_ID",
+				"type": "int",
+				"precision": 10
 			},
 			{
-				"name": "Low_Price",
-				"type": "float",
-				"precision": 15
+				"name": "Event_Description",
+				"type": "varchar"
 			},
 			{
-				"name": "Dividend",
-				"type": "float",
-				"precision": 15
+				"name": "Potential_Impact",
+				"type": "varchar"
 			}
 		],
 		"typeProperties": {
