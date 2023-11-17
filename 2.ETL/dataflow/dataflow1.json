@@ -19,16 +19,26 @@
 						"type": "DatasetReference"
 					},
 					"name": "LoadCompanyInfo"
+				},
+				{
+					"dataset": {
+						"referenceName": "Date_Table",
+						"type": "DatasetReference"
+					},
+					"name": "LoadDateInfo"
 				}
 			],
 			"transformations": [
 				{
 					"name": "DataSelection"
+				},
+				{
+					"name": "DateFormat"
 				}
 			],
 			"scriptLines": [
 				"source(output(",
-				"          body as (address as string, address2 as string, ceo as string, city as string, companyName as string, country as string, date as date, employees as integer, exchange as string, exchangeCode as string, id as string, industry as string, issuetype as string, key as string, longDescription as string, marketcap as string, phone as integer, primarySicCode as short, sector as string, securityName as string, securityType as string, shortDescription as string, state as string, subkey as string, symbol as string, updated as double, website as string, zip as short),",
+				"          body as (address as string, address2 as string, ceo as string, city as string, companyName as string, country as string, date as string, employees as integer, exchange as string, exchangeCode as string, id as string, industry as string, issuetype as string, key as string, longDescription as string, marketcap as string, phone as integer, primarySicCode as short, sector as string, securityName as string, securityType as string, shortDescription as string, state as string, subkey as string, symbol as string, updated as double, website as string, zip as short),",
 				"          headers as [string,string]",
 				"     ),",
 				"     allowSchemaDrift: true,",
@@ -48,7 +58,8 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> DataSelection",
-				"DataSelection sink(allowSchemaDrift: true,",
+				"DataSelection derive(CreationDateTime = toTimestamp(concat(CreationDate,' 00:00:00'))) ~> DateFormat",
+				"DateFormat sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          Company_ID as integer,",
@@ -68,7 +79,35 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> LoadCompanyInfo"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          Company_Name = CompanyName,",
+				"          Ticker = Symbol,",
+				"          Sector,",
+				"          Sub_Sector = SubSector,",
+				"          Description = longDescription",
+				"     )) ~> LoadCompanyInfo",
+				"DataSelection sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Date_ID as integer,",
+				"          Day_Hour as timestamp,",
+				"          Month as integer,",
+				"          Year as integer,",
+				"          Day as integer,",
+				"          Day_Of_Week as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          Day_Hour = CreationDate",
+				"     )) ~> LoadDateInfo"
 			]
 		}
 	}
