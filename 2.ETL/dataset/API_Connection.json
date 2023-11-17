@@ -17,7 +17,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat('CORE/COMPANY/ADBE?token=',pipeline().parameters.Token)",
+				"value": "@concat('CORE/COMPANY/',dataset().Symbol,'?token=',dataset().Token)",
 				"type": "Expression"
 			}
 		},
