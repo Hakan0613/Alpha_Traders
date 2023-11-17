@@ -1,5 +1,5 @@
 {
-	"name": "Stock_Price_Table",
+	"name": "Partnership_Contracts_Table",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Alpha_Traders_DB",
@@ -59,7 +59,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "Quotations"
+			"table": "PartnershipContracts"
 		}
 	}
 }

@@ -119,7 +119,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "Table_cotations",
+									"referenceName": "Stock_Price_Table",
 									"type": "DatasetReference"
 								}
 							]

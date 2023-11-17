@@ -1,0 +1,60 @@
+{
+	"name": "Company_Table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Alpha_Traders_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DWH_Alpha_Traders"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Company_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Company_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Ticker",
+				"type": "varchar"
+			},
+			{
+				"name": "Sector",
+				"type": "varchar"
+			},
+			{
+				"name": "Sub_Sector",
+				"type": "varchar"
+			},
+			{
+				"name": "Description",
+				"type": "varchar"
+			},
+			{
+				"name": "Creation_Date_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "IPO_Date_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Country_ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Company"
+		}
+	}
+}
