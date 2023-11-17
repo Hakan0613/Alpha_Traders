@@ -15,6 +15,10 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
+				"parameters{",
+				"     Token as string ('pk_6ba69ebc7b0b4b959a5e0936f82c5699'),",
+				"     Symbol as string ('ABDE')",
+				"}",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     httpMethod: 'GET',",
