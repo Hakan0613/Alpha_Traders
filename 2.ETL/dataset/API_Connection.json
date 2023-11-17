@@ -3,7 +3,13 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "IEX Cloud",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"Token": {
+					"value": "@pipeline().parameters.Token",
+					"type": "Expression"
+				}
+			}
 		},
 		"annotations": [],
 		"type": "RestResource",
