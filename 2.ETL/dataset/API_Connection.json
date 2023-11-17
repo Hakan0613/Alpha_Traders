@@ -8,12 +8,18 @@
 		"parameters": {
 			"Symbol": {
 				"type": "string"
+			},
+			"Token": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "CORE/COMPANY?token=pk_6ba69ebc7b0b4b959a5e0936f82c5699"
+			"relativeUrl": {
+				"value": "@concat('CORE/COMPANY/',dataset().Symbol,'?token=',dataset().Token)",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
