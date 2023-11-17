@@ -7,10 +7,12 @@
 		},
 		"parameters": {
 			"Symbol": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "ADBE"
 			},
 			"Token": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@pipeline().parameters.token"
 			}
 		},
 		"annotations": [],
