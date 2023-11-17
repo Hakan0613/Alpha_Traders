@@ -5,7 +5,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://api.iex.cloud/v1/data/",
+			"url": "https://api.iex.cloud/v1/data/CORE/COMPANY",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
