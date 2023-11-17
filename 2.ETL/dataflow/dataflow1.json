@@ -19,6 +19,7 @@
 				"     validateSchema: false,",
 				"     httpMethod: 'GET',",
 				"     timeout: 30,",
+				"     requestInterval: 0,",
 				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> source1"
 			]
 		}
