@@ -12,19 +12,42 @@
 					"name": "CompanyData"
 				}
 			],
-			"sinks": [],
-			"transformations": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "select1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
-				"          body as (address as string, address2 as string, ceo as string, city as string, companyName as string, country as string, date as date, employees as short, exchange as string, exchangeCode as string, id as string, industry as string, issuetype as string, key as string, longDescription as string, marketcap as string, phone as long, primarySicCode as short, sector as string, securityName as string, securityType as string, shortDescription as string, state as string, subkey as string, symbol as string, updated as double, website as string, zip as string),",
+				"          body as (address as string, address2 as string, ceo as string, city as string, companyName as string, country as string, date as date, employees as integer, exchange as string, exchangeCode as string, id as string, industry as string, issuetype as string, key as string, longDescription as string, marketcap as string, phone as integer, primarySicCode as short, sector as string, securityName as string, securityType as string, shortDescription as string, state as string, subkey as string, symbol as string, updated as double, website as string, zip as short),",
 				"          headers as [string,string]",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     inferDriftedColumnTypes: true,",
 				"     httpMethod: 'GET',",
 				"     timeout: 30,",
-				"     requestInterval: 0,",
-				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'singleDocument']) ~> CompanyData"
+				"     responseFormat: ['type' -> 'json', 'documentForm' -> 'documentPerLine']) ~> CompanyData",
+				"CompanyData select(mapColumn(",
+				"          Country = body.country,",
+				"          CompanyName = body.companyName,",
+				"          Symbol = body.symbol,",
+				"          Sector = body.sector,",
+				"          SubSector = body.industry,",
+				"          longDescription = body.longDescription,",
+				"          CreationDate = body.date",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
