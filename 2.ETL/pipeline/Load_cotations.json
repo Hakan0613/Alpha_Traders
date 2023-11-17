@@ -22,7 +22,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Load Cotation",
+							"name": "Load Company",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -119,7 +119,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "Stock_Price_Table",
+									"referenceName": "Company_Table",
 									"type": "DatasetReference"
 								}
 							]
