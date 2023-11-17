@@ -13,10 +13,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": {
-				"value": "concat('CORE/COMPANY/',dataset().Symbol)",
-				"type": "Expression"
-			}
+			"relativeUrl": "CORE/COMPANY"
 		},
 		"schema": []
 	}
