@@ -28,8 +28,6 @@ CREATE TABLE Company (
     Sector VARCHAR(255),
     Sub_Sector VARCHAR(255),
     Description VARCHAR(255),
-    Creation_Date_ID INT FOREIGN KEY REFERENCES Date(Date_ID),
-    IPO_Date_ID INT FOREIGN KEY REFERENCES Date(Date_ID),
     Country_ID INT FOREIGN KEY REFERENCES Country(Country_ID)
 );
 
@@ -90,5 +88,3 @@ CREATE TABLE PartnershipContracts (
     Value FLOAT,
     PRIMARY KEY (Company_ID, Partner_Company_ID, Start_Date_ID, End_Date_ID)
 );
-
-
